@@ -1,8 +1,10 @@
-<section>
-  <h1>My Recipes</h1>
-  <div>
-    <% @recipes.each do |recipe| %>
-      <%= render recipe %>
-    <% end %>
+<section class="wrapper">
+  <div class="container">
+    <h1 class="headline">My Recipes</h1>
+    <ul class="recipe-list">
+      <% @recipes.each do |recipe| %>
+        <%= render recipe %>
+      <% end %>
+    </ul>
   </div>
 </section>

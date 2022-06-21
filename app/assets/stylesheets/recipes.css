@@ -1,0 +1,44 @@
+.recipe-list,
+.recipe-list-item {
+  display: flex;
+}
+
+.recipe-list {
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  row-gap: 0.5rem;
+}
+
+.recipe-list-item {
+  border: 2px solid;
+  padding: 1rem 2rem;
+}
+
+.recipe-list-item > :first-child {
+  width: 40%;
+}
+
+.recipe-list-item > :last-child {
+  width: 60%;
+}
+
+.recipe-list-item .title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.recipe-list-item .delete-btn {
+  font-size: 1.3rem;
+  text-align: center;
+  background-color: transparent;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.recipe-list-item .description {
+  font-size: 1.2rem;
+}
