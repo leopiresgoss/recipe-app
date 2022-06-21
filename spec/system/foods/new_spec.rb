@@ -43,15 +43,15 @@ RSpec.describe 'Foods New page', type: :system do
   it 'should contain name text input and its label' do
     subject
     visit new_food_path
-    expect(page).to have_content('Price')
-    expect(page).to have_selector('input[type="number"]#food_price')
+    expect(page).to have_content('Unit price')
+    expect(page).to have_selector('input[type="number"]#food_unit_price')
   end
 
   it 'should not submit it when name is not filled' do
     subject
     visit new_food_path
     fill_in 'Measurement unit', with: 'units'
-    fill_in 'Price', with: '10.50'
+    fill_in 'Unit price', with: '10.50'
     click_button 'Submit'
     expect(page).to have_current_path(new_food_path)
   end
@@ -60,12 +60,12 @@ RSpec.describe 'Foods New page', type: :system do
     subject
     visit new_food_path
     fill_in 'Name', with: 'Egg'
-    fill_in 'Price', with: '10.50'
+    fill_in 'Unit price', with: '10.50'
     click_button 'Submit'
     expect(page).to have_current_path(new_food_path)
   end
 
-  it 'should not submit it when price is not filled' do
+  it 'should not submit it when unit_price is not filled' do
     subject
     visit new_food_path
     fill_in 'Name', with: 'Egg'
@@ -79,7 +79,7 @@ RSpec.describe 'Foods New page', type: :system do
     visit new_food_path
     fill_in 'Name', with: 'Egg'
     fill_in 'Measurement unit', with: 'units'
-    fill_in 'Price', with: '10.50'
+    fill_in 'Unit price', with: '10.50'
     click_button 'Submit'
     expect(page).to have_current_path(foods_path)
   end

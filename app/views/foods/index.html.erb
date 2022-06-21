@@ -13,7 +13,7 @@
       <tr>
         <td><%= item.name %></td>
         <td><%= item.measurement_unit %></td>
-        <td>$<%= number_with_precision(item.price, precision: 2) %></td>
+        <td>$<%= number_with_precision(item.unit_price, precision: 2) %></td>
         <td><%= button_to 'Delete',  food_path(item.id), method: :delete %></td>
       </tr>
     <% end %>

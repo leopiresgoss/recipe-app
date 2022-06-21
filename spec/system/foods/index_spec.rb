@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Foods Index page', type: :system do
   subject do
     test_user = User.create(name: 'Tom', email: 'tom@example.com', password: 'password')
-    Food.create(user: test_user, name: 'milk', measurement_unit: 'L', price: 2)
+    Food.create(user: test_user, name: 'milk', measurement_unit: 'L', unit_price: 2)
 
     @user = User.create(name: 'Maria', email: 'maria@example.com', password: 'password')
-    Food.create(user: @user, name: 'egg', measurement_unit: 'units', price: 10.5)
-    Food.create(user: @user, name: 'flour', measurement_unit: 'kg', price: 11)
+    Food.create(user: @user, name: 'egg', measurement_unit: 'units', unit_price: 10.5)
+    Food.create(user: @user, name: 'flour', measurement_unit: 'kg', unit_price: 11)
 
     visit new_user_session_path
     within('#new_user') do
@@ -24,7 +24,7 @@ RSpec.describe 'Foods Index page', type: :system do
     expect(page).to have_content('You need to sign in or sign up before continuing')
   end
 
-  it "should have foods' names, measurement_unit and price" do
+  it "should have foods' names, measurement_unit and unit_price" do
     subject
     visit foods_path
     expect(page).to have_content('egg')

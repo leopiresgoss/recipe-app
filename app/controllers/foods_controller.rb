@@ -33,6 +33,6 @@ class FoodsController < ActionController::Base
   private
 
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price)
+    params.require(:food).permit(:name, :measurement_unit, :unit_price)
   end
 end
