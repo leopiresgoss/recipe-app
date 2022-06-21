@@ -18,6 +18,12 @@ RSpec.describe 'Foods Index page', type: :system do
     find_button('Log in').click
   end
 
+  it 'should visit signin when user is not logged' do
+    visit foods_path
+    expect(page).to have_current_path(new_user_session_path)
+    expect(page).to have_content('You need to sign in or sign up before continuing')
+  end
+
   it "should have foods' names, measurement_unit and price" do
     subject
     visit foods_path
