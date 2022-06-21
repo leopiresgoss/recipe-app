@@ -1,0 +1,20 @@
+<section id="new-food">
+  <h2>New Food</h2>
+
+  <%= form_with url: foods_path, method: :post, local: true, scope: :food do |f| %>
+    <div class="flex-col">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="flex-col">
+      <%= f.label :measurement_unit %>
+      <%= f.text_field :measurement_unit %>
+    </div>
+    <div class="flex-col">
+      <%= f.label :price %>
+      <%= f.number_field :price, min: 0.01, step: 0.01 %>
+    </div>
+    <%= f.submit "Submit" %>
+  <% end %>
+
+</section>
