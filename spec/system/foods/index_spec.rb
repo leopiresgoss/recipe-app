@@ -51,19 +51,13 @@ RSpec.describe 'Foods Index page', type: :system do
   it 'should have Add New Food Button' do
     subject
     visit foods_path
-    expect(page).to have_button('Add New Food')
-  end
-
-  it 'should have Add New Food Button' do
-    subject
-    visit foods_path
-    expect(page).to have_button('Add New Food')
+    expect(page).to have_link('Add New Food')
   end
 
   it 'should visit food form when clicking Add New Food Button' do
     subject
     visit foods_path
-    find_button('Add New Food').click
-    expect(page).to have_current_path(new_food)
+    find_link('Add New Food').click
+    expect(page).to have_current_path(new_food_path)
   end
 end
