@@ -1,0 +1,21 @@
+<%= turbo_frame_tag 'recipe-foods-table' do %>
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @recipe_foods.empty? %>
+        <tr><td colspan="4">There are no ingredients yet.</td></tr>
+      <% else %>
+        <% @recipe_foods.each do |recipe_food| %>
+          <%= render recipe_food %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

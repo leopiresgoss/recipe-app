@@ -1,0 +1,12 @@
+<%= turbo_frame_tag "recipe-foods-table-item-#{recipe_food.id}" do %>
+  <tr>
+    <td><%= recipe_food.food.name %></td>
+    <td><%= "#{recipe_food.quantity}#{recipe_food.food.measurement_unit}" %></td>
+    <td>$<%= recipe_food.quantity * recipe_food.food.unit_price %></td>
+    <td>
+      <%= link_to 'Modify', edit_recipe_recipe_food_path(recipe_food.recipe, recipe_food) %>
+      <%= link_to 'Remove', recipe_recipe_food_path(recipe_food.recipe, recipe_food),
+                  data: { turbo_method: 'delete', turbo_frame: '_top' } %>
+    </td>
+  </tr>
+<% end %>

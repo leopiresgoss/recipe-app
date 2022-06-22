@@ -21,6 +21,24 @@
   padding: 0;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+}
+
+.headline {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
 input {
   border: 1px solid black;
   padding: 4px;
