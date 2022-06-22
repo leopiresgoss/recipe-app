@@ -1,0 +1,37 @@
+<section class="wrapper">
+  <div class="container">
+    <h1 class="headline"><%= @recipe.name %></h1>
+    <div class="recipe-details">      
+      <ul class="recipe-details-info">
+        <li>
+          <p><span>Preparation time: </span><%= @recipe.preparation_time %></p>
+        </li>
+        <li>
+          <p><span>Cooking time: </span><%= @recipe.cooking_time %></p>
+        </li>
+        <li>
+          <p><span>Description: </span><%= @recipe.description %></p>
+        </li>
+      </ul>
+      <div class="recipe-public-toggle-wrapper">
+        <p>Public:</p>
+        <%= button_to '', recipe_path(@recipe), class: "recipe-public-toggle #{@recipe.public? ? 'on' : 'off'}",
+                      method: :patch, params: { recipe: { public: !@recipe.public? } } %>
+      </div>
+    </div>
+    <div class="recipe-btn-container">
+      <%= link_to 'Generate shopping list', general_shopping_list_index_path, class: 'recipe-create-btn' %>
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), data: { turbo_frame: 'add-ingredient'  },
+                  class: 'recipe-create-btn' %>
+    </div>
+
+    <%= turbo_frame_tag 'add-ingredient', class: 'add-food-frame' do %>
+    <% end %>
+
+    <hr style="border-width: 1px; border-style: inset">
+    
+    <%= turbo_frame_tag 'recipe-foods-table', src: recipe_recipe_foods_path(@recipe) do %>   
+    <% end %>
+
+  </div>
+</section>
