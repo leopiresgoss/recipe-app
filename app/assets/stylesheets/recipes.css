@@ -18,7 +18,8 @@
 .recipe-btn-container,
 .add-food-form-fields,
 .recipe-foods-table,
-.recipe-foods-table .row {
+.recipe-foods-table .row,
+.recipe-foods-table .col {
   display: flex;
 }
 
@@ -178,8 +179,21 @@
   text-align: center;
   padding: 0.3rem;
   background-color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
 }
 
 .recipe-foods-table .turbo-frame-row:nth-of-type(even) .col {
   background-color: lightgray;
+}
+
+.recipe-foods-table .edit [type="number"] {
+  width: 50px;
+}
+
+.recipe-foods-table .edit .recipe-create-btn {
+  margin: 0;
+  font-size: 1rem;
 }

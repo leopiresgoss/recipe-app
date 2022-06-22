@@ -7,7 +7,7 @@
       <div class="col">Actions</div>
     </div>
     <% if @recipe_foods.empty? %>
-      <div class="row"><div colspan="4" class="col">There are no ingredients yet.</div></div>
+      <div class="row"><div style="width: 100%" class="col">There are no ingredients yet.</div></div>
     <% else %>
       <% @recipe_foods.each do |recipe_food| %>
         <%= render recipe_food %>

@@ -1,12 +1,13 @@
-<%= turbo_frame_tag "recipe-foods-table-item-#{@recipe_food.id}" do %>
-  <tr>
-    <td><%= @recipe_food.food.name %></td>
-    <td>
-      <%= "#{@recipe_food.quantity}#{@recipe_food.food.measurement_unit}" %>
-    </td>
-    <td>$<%= @recipe_food.quantity * @recipe_food.food.unit_price %></td>
-    <td>
-      TEST
-    </td>
-  </tr>
+<%= turbo_frame_tag "recipe-foods-table-item-#{@recipe_food.id}", class: 'turbo-frame-row' do %>
+  <%= form_with(model: @recipe_food, url: recipe_recipe_food_path(@recipe_food.recipe, @recipe_food), class: 'row edit') do |form| %>
+    <div class="col"><%= @recipe_food.food.name %></div>
+    <div class="col">
+      <%= form.number_field :quantity, min: 1, max: 999, value: @recipe_food.quantity %>
+    </div>
+    <div class="col">$<%= @recipe_food.quantity * @recipe_food.food.unit_price %></div>
+    <div class="col">
+      <%= form.submit 'Save' %>
+      <%= link_to 'Cancel', recipe_path(params[:recipe_id]), class: 'recipe-create-btn', data: { turbo_frame: '_top' } %>
+    </div>
+  <% end %>
 <% end %>
