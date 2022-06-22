@@ -1,5 +1,6 @@
 <%= turbo_frame_tag "recipe-foods-table-item-#{@recipe_food.id}", class: 'turbo-frame-row' do %>
-  <%= form_with(model: @recipe_food, url: recipe_recipe_food_path(@recipe_food.recipe, @recipe_food), class: 'row edit') do |form| %>
+  <%= form_with(model: @recipe_food, url: recipe_recipe_food_path(@recipe_food.recipe, @recipe_food), class: 'row edit',
+                data: { turbo_frame: '_top' }) do |form| %>
     <div class="col"><%= @recipe_food.food.name %></div>
     <div class="col">
       <%= form.number_field :quantity, min: 1, max: 999, value: @recipe_food.quantity %>

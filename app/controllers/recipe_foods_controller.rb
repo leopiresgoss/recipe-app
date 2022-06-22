@@ -32,6 +32,22 @@ class RecipeFoodsController < ApplicationController
     @recipe_food = RecipeFood.find(params[:id])
   end
 
+  def update
+    recipe_food = RecipeFood.find(params[:id])
+    respond_to do |format|
+      if recipe_food.update(recipe_food_params)
+        format.html { redirect_to recipe_path(params[:recipe_id]), notice: 'Ingredient updated.' }
+      else
+        format.html do
+          redirect_to recipe_path(recipe_food), status: :unprocessable_entity,
+                                                notice: "#{pluralize(recipe_food.errors.count, 'error')} found: #{
+                                                  recipe_food.errors.map(&:full_message).join ', '
+                                                }"
+        end
+      end
+    end
+  end
+
   def destroy
     RecipeFood.find(params[:id]).destroy
 
