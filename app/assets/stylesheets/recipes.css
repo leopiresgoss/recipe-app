@@ -1,5 +1,19 @@
+.recipe-create-btn {
+  padding: 0.5rem;
+  border: 1px solid;
+  background-color: lightgray;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
 .recipe-list,
-.recipe-list-item {
+.recipe-list-item,
+.recipe-details,
+.recipe-public-toggle-wrapper,
+.recipe-public-toggle-wrapper .button_to {
   display: flex;
 }
 
@@ -28,6 +42,8 @@
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: bold;
+  display: block;
+  color: black;
 }
 
 .recipe-list-item .delete-btn {
@@ -41,4 +57,53 @@
 
 .recipe-list-item .description {
   font-size: 1.2rem;
+}
+
+.recipe-public-toggle-wrapper {
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.recipe-public-toggle {
+  width: 50px;
+  height: 25px;
+  position: relative;
+  border-radius: 1rem;
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+.recipe-public-toggle:before {
+  content: '';
+  width: 22px;
+  top: 3px;
+  bottom: 3px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.on:before {
+  background-color: green;
+  right: 3px;
+}
+
+.off:before {
+  background-color: red;
+  left: 3px;
+}
+
+.recipe-details {
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.recipe-details-info {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.recipe-details-info span {
+  font-weight: bold;
 }

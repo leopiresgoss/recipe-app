@@ -1,6 +1,6 @@
 <li class="recipe-list-item">
   <div>
-    <p class="title"><%= recipe.name %></p>
+    <%= link_to recipe.name, recipe_path(recipe), class: 'title' %>
     <%= button_to 'REMOVE', recipe_path(recipe), method: :delete, class: 'delete-btn' %>
   </div>
   <div>
