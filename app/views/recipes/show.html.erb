@@ -19,5 +19,9 @@
                       method: :patch, params: { recipe: { public: !@recipe.public? } } %>
       </div>
     </div>
+    <div>
+      <%= link_to 'Generate shopping list', general_shopping_list_index_path %>
+      <%= link_to 'Add ingredient', general_shopping_list_index_path %>
+    </div>
   </div>
 </section>
