@@ -18,6 +18,12 @@ RSpec.describe 'Navbar', type: :system do
     expect(page).to have_selector('nav')
   end
 
+  it 'should redirect to log in when clicking the logo' do
+    visit root_path
+    find('a[title="Home"]').click
+    expect(page).to have_current_path(root_path)
+  end
+
   context 'user is not logged' do
     it 'should display only sign in and sign out' do
       visit root_path
@@ -53,9 +59,16 @@ RSpec.describe 'Navbar', type: :system do
       expect(page).to have_content('My Profile')
       expect(page).to have_content('Sign Out')
     end
+
+    it 'should redirect to log in when clicking the logo' do
+      subject
+      visit foods_path
+      find('a[title="Home"]').click
+      expect(page).to have_current_path(root_path)
+    end
   end
 
-  context 'logged user buttons' do
+  context 'logged user nav-links' do
     it 'should redirect to Foods#index when clicking Foods' do
       subject
       visit root_path
@@ -70,7 +83,7 @@ RSpec.describe 'Navbar', type: :system do
       expect(page).to have_current_path(recipes_path)
     end
 
-    it 'should redirect to Edi User Registration when clicking My Profile' do
+    it 'should redirect to Edit User Registration when clicking My Profile' do
       subject
       visit root_path
       click_link 'My Profile'
