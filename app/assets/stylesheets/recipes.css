@@ -1,5 +1,5 @@
 .recipe-create-btn {
-  padding: 0.5rem;
+  padding: 0.1rem 0.5rem;
   border: 1px solid;
   background-color: lightgray;
   display: inline-block;
@@ -7,13 +7,16 @@
   color: black;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 .recipe-list,
 .recipe-list-item,
 .recipe-details,
 .recipe-public-toggle-wrapper,
-.recipe-public-toggle-wrapper .button_to {
+.recipe-public-toggle-wrapper .button_to,
+.recipe-btn-container,
+.add-food-form-fields {
   display: flex;
 }
 
@@ -107,4 +110,44 @@
 
 .recipe-details-info span {
   font-weight: bold;
+}
+
+.recipe-btn-container {
+  justify-content: space-between;
+}
+
+.add-food-form {
+  font-size: 1.2rem;
+}
+
+.add-food-form > :last-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-food-form .recipe-create-btn {
+  margin-bottom: 0;
+}
+
+.add-food-form-fields {
+  gap: 1rem;
+}
+
+.add-food-form-fields select {
+  font-size: 1.1rem;
+}
+
+.add-food-form-fields input {
+  width: 50px;
+}
+
+.add-food-frame {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.add-ingredient-headline {
+  text-align: center;
+  margin-bottom: 1rem;
 }

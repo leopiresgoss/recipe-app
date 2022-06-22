@@ -19,9 +19,14 @@
                       method: :patch, params: { recipe: { public: !@recipe.public? } } %>
       </div>
     </div>
-    <div>
-      <%= link_to 'Generate shopping list', general_shopping_list_index_path %>
-      <%= link_to 'Add ingredient', general_shopping_list_index_path %>
+    <div class="recipe-btn-container">
+      <%= link_to 'Generate shopping list', general_shopping_list_index_path, class: 'recipe-create-btn' %>
+      <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), data: { turbo_frame: 'add-ingredient'  },
+                  class: 'recipe-create-btn' %>
     </div>
+    <%= turbo_frame_tag 'add-ingredient', class: 'add-food-frame' do %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <hr style="border-width: 1px; border-style: inset">
   </div>
 </section>
