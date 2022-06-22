@@ -77,7 +77,7 @@
   cursor: pointer;
 }
 
-.recipe-public-toggle:before {
+.recipe-public-toggle::before {
   content: '';
   width: 22px;
   top: 3px;
@@ -86,12 +86,12 @@
   border-radius: 50%;
 }
 
-.on:before {
+.on::before {
   background-color: green;
   right: 3px;
 }
 
-.off:before {
+.off::before {
   background-color: red;
   left: 3px;
 }
