@@ -1,6 +1,8 @@
 <%= turbo_frame_tag 'add-ingredient' do %>
   <h2 class="add-ingredient-headline">Add ingredient</h2>
   
+  <%= link_to 'Create new food', new_food_path, data: { turbo_frame: '_top' } %>
+
   <%= render 'form', recipe_food: @recipe_food %>
 
 <% end %>

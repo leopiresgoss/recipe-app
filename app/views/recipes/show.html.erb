@@ -24,9 +24,14 @@
       <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), data: { turbo_frame: 'add-ingredient'  },
                   class: 'recipe-create-btn' %>
     </div>
+
     <%= turbo_frame_tag 'add-ingredient', class: 'add-food-frame' do %>
-      <p class="notice"><%= notice %></p>
     <% end %>
+
     <hr style="border-width: 1px; border-style: inset">
+    
+    <%= turbo_frame_tag 'recipe-foods-table', src: recipe_recipe_foods_path(@recipe) do %>   
+    <% end %>
+
   </div>
 </section>
