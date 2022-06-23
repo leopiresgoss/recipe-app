@@ -14,7 +14,7 @@
   display: block;
 }
 
-.form > div input:not([type="submit"]),
+.form > div input:not([type="submit"], [type="checkbox"]),
 .form > div textarea {
   width: 100%;
 }
@@ -43,4 +43,8 @@
 .cancel-account .recipe-create-btn {
   font-size: 0.9rem;
   margin: 0;
+}
+
+.login-links {
+  text-align: center;
 }

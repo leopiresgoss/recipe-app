@@ -55,7 +55,7 @@
 
       <div class="cancel-account">
         <p>Unhappy?</p>
-        <%= button_to "Cancel my account", registration_path(resource_name), data: { turbo_confirm: "Are you sure?" }, method: :delete, class: 'recipe-create-btn' %>
+        <%= button_to "Cancel my account", registration_path(resource_name), form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete, class: 'recipe-create-btn' %>
       </div>
     </div>
   </div>
