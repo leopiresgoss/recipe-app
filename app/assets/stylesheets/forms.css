@@ -10,6 +10,8 @@
 
 .form > div label {
   margin-bottom: 0.25rem;
+  font-weight: bold;
+  display: block;
 }
 
 .form > div input:not([type="submit"]),
@@ -30,4 +32,15 @@
 
 .form ul {
   margin-left: 1rem;
+}
+
+.cancel-account {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cancel-account .recipe-create-btn {
+  font-size: 0.9rem;
+  margin: 0;
 }

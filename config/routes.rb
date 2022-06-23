@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   resources :public_recipes, only: %i[index show]
   resources :general_shopping_list, only: %i[index]
 
+  get '/users', to: 'recipes#index'
+
   root 'public_recipes#index'
 end
