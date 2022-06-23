@@ -78,8 +78,8 @@ RSpec.describe 'Recipes list page', type: :system do
 
   it 'Clicking the "Create new recipe" link should redirect to the create recipe page' do
     subject
-    r = Recipe.create(user: @u, name: 'Test Recipe', preparation_time: '1h', cooking_time: '2h',
-                      description: 'Testing')
+    Recipe.create(user: @u, name: 'Test Recipe', preparation_time: '1h', cooking_time: '2h',
+                  description: 'Testing')
 
     visit recipes_path
 
