@@ -1,0 +1,31 @@
+#public-recipes .recipe-list-item {
+  border-color: black;
+  color: black;
+  text-decoration: none;
+}
+
+#public-recipes li {
+  margin-bottom: 4px;
+  list-style: none;
+}
+
+.recipe-name {
+  font-size: 2rem;
+}
+
+#public-recipes-show h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.ingredients-table {
+  width: 70vw;
+  margin: auto;
+  border-spacing: unset;
+  border-collapse: collapse;
+}
+
+.ingredients-table,
+.ingredients-table th {
+  border: 2px solid gray;
+}
