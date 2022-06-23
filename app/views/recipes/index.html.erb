@@ -3,8 +3,12 @@
     <h1 class="headline">My Recipes</h1>
     <%= link_to 'Create new recipe', new_recipe_path, class: 'recipe-create-btn' %>
     <ul class="recipe-list">
-      <% @recipes.each do |recipe| %>
-        <%= render recipe %>
+      <% if @recipes.empty? %>
+        <h2 style="text-align: center">There are no recipes yet.</h2>
+      <% else %>
+        <% @recipes.each do |recipe| %>
+          <%= render recipe %>
+        <% end %>
       <% end %>
     </ul>
   </div>
