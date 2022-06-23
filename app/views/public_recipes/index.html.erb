@@ -1,0 +1,10 @@
+<section id="public-recipes" class="wrapper">
+  <div class="container">
+    <h1 class="headline">Public Recipes</h1>
+    <ul class="recipe-list">
+      <% @recipes.each do |recipe| %>
+        <%= render "public_recipes/recipe", recipe: %>
+      <% end %>
+    </ul>
+  </div>
+</section>

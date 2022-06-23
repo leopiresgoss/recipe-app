@@ -1,0 +1,24 @@
+<section id="public-recipes-show" class="wrapper">
+  <div class="container">
+    <h1 class="headline"><%= @recipe.name %></h1>
+    <div class="recipe-details">      
+      <ul class="recipe-details-info">
+        <li>
+          <p><span>Preparation time: </span><%= @recipe.preparation_time %></p>
+        </li>
+        <li>
+          <p><span>Cooking time: </span><%= @recipe.cooking_time %></p>
+        </li>
+        <li>
+          <p><span>Description: </span><%= @recipe.description %></p>
+        </li>
+      </ul>
+    </div>
+    <h3>Ingredients</h3>
+    <% if @recipe.total_food_items > 0 %>
+      <%= render "public_recipes/ingredients", recipe_foods: @recipe.recipe_foods %>
+    <% else %>
+      <p>No ingredient added</p>
+    <% end %>
+  </div>
+</section>
