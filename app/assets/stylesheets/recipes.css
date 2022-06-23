@@ -16,7 +16,10 @@
 .recipe-public-toggle-wrapper,
 .recipe-public-toggle-wrapper .button_to,
 .recipe-btn-container,
-.add-food-form-fields {
+.add-food-form-fields,
+.recipe-foods-table,
+.recipe-foods-table .row,
+.recipe-foods-table .col {
   display: flex;
 }
 
@@ -150,4 +153,47 @@
 .add-ingredient-headline {
   text-align: center;
   margin-bottom: 1rem;
+}
+
+.recipe-foods-table {
+  flex-direction: column;
+  row-gap: 1px;
+  background-color: gray;
+  border: 1px solid gray;
+}
+
+.recipe-foods-table .head {
+  font-weight: bold;
+}
+
+.recipe-foods-table .col {
+  width: 25%;
+  text-align: center;
+  padding: 0.3rem;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.recipe-foods-table .head .col {
+  background-color: darkgray;
+}
+
+.recipe-foods-table .row {
+  column-gap: 1px;
+}
+
+.recipe-foods-table .turbo-frame-row:nth-of-type(even) .col {
+  background-color: lightgray;
+}
+
+.recipe-foods-table .edit [type="number"] {
+  width: 50px;
+}
+
+.recipe-foods-table .edit .recipe-create-btn {
+  margin: 0;
+  font-size: 1rem;
 }

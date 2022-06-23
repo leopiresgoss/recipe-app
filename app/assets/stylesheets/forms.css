@@ -1,0 +1,50 @@
+.form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form > div {
+  margin-bottom: 0.5rem;
+}
+
+.form > div label {
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+  display: block;
+}
+
+.form > div input:not([type="submit"], [type="checkbox"]),
+.form > div textarea {
+  width: 100%;
+}
+
+.form > div textarea {
+  border: 1px solid;
+  padding: 0.375rem;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.form h2 {
+  margin-bottom: 0.5rem;
+}
+
+.form ul {
+  margin-left: 1rem;
+}
+
+.cancel-account {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.cancel-account .recipe-create-btn {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.login-links {
+  text-align: center;
+}

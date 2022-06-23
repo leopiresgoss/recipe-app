@@ -12,9 +12,14 @@
 
   <body>
     <%= render "navbar/navbar" %> 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+    
+    <div class="wrapper">
+      <div class="container">
+        <%= "<p class=\"notice\">#{notice}</p>".html_safe if notice %>
+        <%= "<p class=\"alert\">#{alert}</p>".html_safe if alert %>
+      </div>
+    </div>
+    
     <%= yield %>
   </body>
 </html>
