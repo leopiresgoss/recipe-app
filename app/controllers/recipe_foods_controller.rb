@@ -2,7 +2,7 @@ class RecipeFoodsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @recipe_foods = current_user.recipes.find(params[:recipe_id]).recipe_foods
+    @recipe_foods = current_user.recipes.find(params[:recipe_id]).recipe_foods.includes(:food, :recipe)
   end
 
   def new
