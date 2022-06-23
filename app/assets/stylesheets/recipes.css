@@ -166,14 +166,6 @@
   font-weight: bold;
 }
 
-.recipe-foods-table .head .col {
-  background-color: darkgray;
-}
-
-.recipe-foods-table .row {
-  column-gap: 1px;
-}
-
 .recipe-foods-table .col {
   width: 25%;
   text-align: center;
@@ -183,6 +175,14 @@
   justify-content: center;
   gap: 0.3rem;
   flex-wrap: wrap;
+}
+
+.recipe-foods-table .head .col {
+  background-color: darkgray;
+}
+
+.recipe-foods-table .row {
+  column-gap: 1px;
 }
 
 .recipe-foods-table .turbo-frame-row:nth-of-type(even) .col {
