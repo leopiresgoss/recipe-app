@@ -5,13 +5,6 @@ class FoodsController < ApplicationController
     @foods = Food.where(user: current_user)
   end
 
-  def new
-    food = Food.new
-    respond_to do |format|
-      format.html { render :new, locals: { food: } }
-    end
-  end
-
   def create
     food = current_user.foods.new(food_params)
     respond_to do |format|
