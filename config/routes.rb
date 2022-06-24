@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :recipe_foods, except: %i[show]
   end
   resources :public_recipes, only: %i[index show]
-  resources :general_shopping_list, only: %i[index]
+  resources :general_shopping_lists, only: %i[index], path: '/general_shopping_list'
 
   get '/users', to: 'recipes#index'
 
