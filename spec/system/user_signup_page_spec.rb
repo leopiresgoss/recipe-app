@@ -35,7 +35,7 @@ RSpec.describe 'Sign-up page', type: :system do
     within('#new_user') do
       fill_in 'Name', with: 'Jhon Capybara'
       fill_in 'Email', with: 'capybara@test.com'
-      fill_in 'Password', with: 'abc123456'
+      fill_in 'user_password', with: 'abc123456'
     end
     find_button('Sign up').click
     expect(page).to have_content('Email has already been taken')
@@ -46,7 +46,7 @@ RSpec.describe 'Sign-up page', type: :system do
     within('#new_user') do
       fill_in 'Name', with: 'Jhon Capybara'
       fill_in 'Email', with: 'capybara@test.com'
-      fill_in 'Password', with: 'abc123456'
+      fill_in 'user_password', with: 'abc123456'
       fill_in 'Password confirmation', with: 'abc123456'
     end
     find_button('Sign up').click

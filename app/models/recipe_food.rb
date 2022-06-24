@@ -8,4 +8,8 @@ class RecipeFood < ApplicationRecord
   validates :food_id, :quantity, presence: true
   validates :quantity, comparison: { greater_than_or_equal_to: 1 }
   validates :quantity, numericality: true
+
+  def total_food_price
+    quantity * food.unit_price
+  end
 end
