@@ -1,0 +1,9 @@
+#shopping-list {
+  align-items: center;
+  gap: 24px;
+}
+
+.summary {
+  display: flex;
+  gap: 16px;
+}
