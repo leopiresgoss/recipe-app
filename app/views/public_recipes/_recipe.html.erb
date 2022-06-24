@@ -1,0 +1,25 @@
+<li>
+  <%= link_to public_recipe_path(recipe.id), title: recipe.name, class: 'recipe-list-item' do %>
+    <ul>
+      <li>
+        <p class="recipe-name"><%= recipe.name %></p>
+      </li>
+      
+      <li>
+        <p class="author">By <%= recipe.user.name %></p>
+      </li>
+    </ul>
+    <ul class="flex-col">
+      <% if recipe.total_food_items > 0 %>
+        <li><p class="quantity">Total Food Items: <%= recipe.total_food_items %></p></li>
+        <li>
+          <p class="total-price">
+            Total Price: $<%= number_with_precision(recipe.total_price, precision: 2) %>
+          </p>
+        </li>
+      <% else %>
+        <li><p>No ingredient added</p></li>
+      <% end %>
+    </ul>
+  <% end %>
+</li>

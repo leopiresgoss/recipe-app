@@ -1,0 +1,9 @@
+<section class="wrapper">
+  <div class="container">
+    <p><%= link_to 'recipes_list', recipes_path %> / create_recipe</p>
+    <h1 class="headline">Create new recipe</h1>
+
+    <%= render 'form', recipe: @recipe %>
+
+  </div>
+</section>

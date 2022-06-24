@@ -1,0 +1,7 @@
+<%= turbo_stream.update 'add-ingredient' do %>
+  <p class="notice">Ingredient added.</p>
+<% end %>
+
+<%= turbo_stream.replace 'recipe-foods-table' do %>
+  <%= turbo_frame_tag 'recipe-foods-table', src: recipe_recipe_foods_path(params[:recipe_id]) %>   
+<% end %>

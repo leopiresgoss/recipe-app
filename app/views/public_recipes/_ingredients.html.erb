@@ -1,0 +1,18 @@
+  <table class="ingredients-table">
+    <thead>
+      <tr>
+        <th>Ingredient</th>
+        <th>Quantity</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% recipe_foods.each do |item| %>
+        <tr>
+          <td class="food-name"><%= item.food.name %></td>
+          <td><%= "#{item.quantity}#{item.food.measurement_unit}" %></td>
+          <td>$<%= number_with_precision(item.total_food_price, precision: 2) %></td>
+        </tr>
+      <% end %>    
+    </tbody>
+</table>
