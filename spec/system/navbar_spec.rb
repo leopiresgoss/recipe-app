@@ -27,12 +27,12 @@ RSpec.describe 'Navbar', type: :system do
   context 'user is not logged' do
     it 'should display only sign in and sign out' do
       visit root_path
-      expect(page).to have_content('Sign In')
-      expect(page).to have_content('Sign Up')
-      expect(page).to_not have_content('Foods')
-      expect(page).to_not have_content('Recipes')
-      expect(page).to_not have_content('My Profile')
-      expect(page).to_not have_content('Sign out')
+      expect(page).to have_link('Sign In')
+      expect(page).to have_link('Sign Up')
+      expect(page).to_not have_link('Foods')
+      expect(page).to_not have_link('Recipes')
+      expect(page).to_not have_link('My Profile')
+      expect(page).to_not have_button('Sign out')
     end
 
     it 'should redirect to sign in when clicking sign in' do
@@ -52,12 +52,12 @@ RSpec.describe 'Navbar', type: :system do
     it 'should display Foods, Recipes, My Profile, Sign Out' do
       subject
       visit root_path
-      expect(page).to_not have_content('Sign In')
-      expect(page).to_not have_content('Sign Up')
-      expect(page).to have_content('Foods')
-      expect(page).to have_content('Recipes')
-      expect(page).to have_content('My Profile')
-      expect(page).to have_content('Sign Out')
+      expect(page).to_not have_link('Sign In')
+      expect(page).to_not have_link('Sign Up')
+      expect(page).to have_link('Foods')
+      expect(page).to have_link('Recipes')
+      expect(page).to have_link('My Profile')
+      expect(page).to have_button('Sign Out')
     end
 
     it 'should redirect to log in when clicking the logo' do
