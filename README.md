@@ -14,10 +14,10 @@ The Recipe app keeps track of all your recipes and ingredients. The app will all
 
 ## Built With
 
-- Ruby
-- Ruby on Rails
-- PostgreSQL
-- Devise
+- Ruby 3.1.2
+- Ruby on Rails 7.0.3
+- PostgreSQL 14.4
+- Devise 4.8.1
 
 
 ## Getting Started
